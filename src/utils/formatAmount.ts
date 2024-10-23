@@ -1,0 +1,1 @@
+export const formatAmount = (amount:any) =>`₹ ${amount/100}`
