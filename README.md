@@ -29,4 +29,4 @@ Welcome to our innovative e-commerce platform, meticulously crafted with Next.js
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/ecommerce-platform.git
+   https://github.com/Arghadeeps07/shopping-world.git
