@@ -151,7 +151,7 @@ const Navbar = () => {
               </SheetHeader>
             </SheetContent>
           </Sheet>
-          <ModeToggle className="ml-4" />
+          <ModeToggle />
         </div>
       </div>
     </nav>

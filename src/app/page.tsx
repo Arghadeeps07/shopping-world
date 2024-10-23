@@ -19,7 +19,7 @@ export default async function Home() {
 
       {/* Product List Section */}
       <div className="m-4 flex flex-wrap justify-center gap-4 md:gap-5">
-        {products.data.map((item) => (
+        {products.data.map((item: any) => (
           <ProductCard key={item.id} item={item} />
         ))}
       </div>

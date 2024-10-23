@@ -17,7 +17,7 @@ const Product = async () => {
     <div className='my-6 mx-4 sm:mx-8 md:mx-12 lg:mx-16'>
       <h1 className="text-3xl font-bold text-center mb-6">Our Products</h1>
       <div className='grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 '>
-        {products.data.map((item) => (
+        {products.data.map((item: any) => (
           <ProductCard key={item.id} item={item} />
         ))}
       </div>

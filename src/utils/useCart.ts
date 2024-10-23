@@ -27,14 +27,14 @@ export const useCart = () => {
 
     const findTotalPrice = ()=>{
         let amount = 0
-        cartItems.forEach(item=>{
+        cartItems.forEach((item: any)=>{
            amount += (item.price / 100) * item.quantity 
         })
         setCartTotal(amount)
     }
-    const addItem = (product)=>{
+    const addItem = (product: any)=>{
         
-       const existingProductIndex = cartItems.findIndex((item)=>item.id == product.id)
+       const existingProductIndex = cartItems.findIndex((item: any)=>item.id == product.id)
        const updatedCart = [...cartItems]
        if(existingProductIndex != -1){
             updatedCart[existingProductIndex].quantity += 1
@@ -47,8 +47,8 @@ export const useCart = () => {
         
     }
 
-    const deleteById = (productId) =>{
-        const newProducts = cartItems.filter(product=>productId != product.id)
+    const deleteById = (productId: string) =>{
+        const newProducts = cartItems.filter((product: any)=>productId != product.id)
         setCartItems(newProducts)
         if(newProducts.length == 0){
             localStorage.removeItem("products")
@@ -62,8 +62,8 @@ export const useCart = () => {
         setCartItems([])
     }
 
-    const incrementCartItems = (productId)=>{
-        const newProducts = cartItems.map(item=>{
+    const incrementCartItems = (productId : string)=>{
+        const newProducts = cartItems.map((item: any)=>{
             if(item.id == productId){
                 return {
                     ...item,
@@ -76,8 +76,8 @@ export const useCart = () => {
         localStorage.setItem('products',JSON.stringify(newProducts))
         setCartItems(newProducts)
     }
-    const decrementCartItems = (productId)=>{
-        const newProducts = cartItems.map(item=>{
+    const decrementCartItems = (productId: string)=>{
+        const newProducts = cartItems.map((item: any)=>{
             if(item.id == productId && item.quantity > 1){
                 return {
                     ...item,

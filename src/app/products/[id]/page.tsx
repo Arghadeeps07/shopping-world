@@ -15,16 +15,16 @@ export async function generateMetadata<Metadata>({params:{id}}:any){
     }
 }
 
-export default async function ProductDetail({ params: { id } }: any) {
-  const product = await getProductbyId(id);
+export default async function ProductDetail({ params: { id } }: { params: { id: string } }) {
+  const product: any = await getProductbyId(id); // Explicitly type the product
   const clientProduct = {
-    name: product.name,
-    description: product.description,
-    id: product.id,
-    price: product.default_price.unit_amount,
-    price_id: product.default_price.id,
-    currency: 'INR',
-    image: product.images[0],
+      name: product.name,
+      description: product.description,
+      id: product.id,
+      price: product.default_price.unit_amount, // Now TypeScript recognizes unit_amount
+      price_id: product.default_price.id,
+      currency: 'INR',
+      image: product.images[0],
   };
 
   return (

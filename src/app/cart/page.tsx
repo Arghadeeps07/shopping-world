@@ -17,7 +17,7 @@ const page = () => {
 
     const cartCheckout = async () => {
         try {
-            const body = cartItems.map(item => {
+            const body = cartItems.map((item: any) => {
                 return {
                     price: item.price_id,
                     quantity: item.quantity
@@ -69,7 +69,7 @@ const page = () => {
 
             {cartCount > 0 && (
                 <div>
-                    {cartItems.map(item => (
+                    {cartItems.map((item: any) => (
                         <div key={item.id} className='flex flex-col sm:flex-row justify-between border rounded-md p-4 my-2 bg-white dark:bg-gray-800 hover:shadow-lg'>
                             <Link href={`/products/${item.id}`} className='flex items-center'>
                                 <Image src={item.image} alt={item.name} width={80} height={80} className='w-20 h-auto' />
